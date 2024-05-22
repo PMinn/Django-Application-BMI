@@ -1,0 +1,62 @@
+.Input {
+    --padding: 0.75rem;
+    padding: calc(var(--padding) + 0.75rem) var(--padding) var(--padding) var(--padding);
+    cursor: text;
+    transition-property: background;
+    transition-timing-function: ease;
+    transition-duration: .25s;
+    background-color: rgb(244, 244, 245);
+    border-radius: 0.75rem;
+    position: relative;
+    width: 100%;
+    line-height: 1.2rem;
+    font-size: .9rem;
+    display: flex;
+}
+
+.Input:hover {
+    background-color: rgb(228, 228, 231);
+}
+
+.Input input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    height: 1.2rem;
+    flex-grow: 1;
+}
+
+.Input .label {
+    position: absolute;
+    top: calc(var(--padding) + 0.325rem);
+    left: var(--padding);
+    height: 1rem;
+    width: 100%;
+    pointer-events: none;
+    transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    opacity: 0.8;
+}
+
+.Input input:not([type="text"]):not([type="number"])+.label {
+    top: calc(var(--padding) - 0.25rem);
+    left: var(--padding);
+    font-size: 0.75rem;
+}
+
+.Input .label>span {
+    display: none;
+}
+
+.Input input[required]+.label>span {
+    color: rgb(var(--theme-color-danger));
+    display: inline-block;
+}
+
+.Input input:focus+.label,
+.Input input:valid+.label {
+    top: calc(var(--padding) - 0.25rem);
+    left: var(--padding);
+    font-size: 0.75rem;
+}

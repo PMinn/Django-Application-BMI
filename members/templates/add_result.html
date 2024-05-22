@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}{{ page }} | BMI{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static '/css/init.css' %}" />
+<link rel="stylesheet" href="{% static '/css/Card.css' %}" />
+<link rel="stylesheet" href="{% static '/css/Table.css' %}" />
+<style>
+    .Table {
+        width: 80%;
+        margin: 2rem auto;
+        padding: 1rem 2rem;
+        max-width: 500px;
+    }
+
+    .Table h1 {
+        margin: 0;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="Card Table fixed">
+    <h1>已完成新增以下資料</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>編號</th>
+                <th>名字</th>
+                <th>身高</th>
+                <th>體重</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for x in newMembers %}
+            <tr>
+                <td>{{ x.id }}</td>
+                <td>{{ x.name }}</td>
+                <td>{{ x.height }}</td>
+                <td>{{ x.weight }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

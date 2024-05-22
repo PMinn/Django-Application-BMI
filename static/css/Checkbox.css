@@ -1,0 +1,64 @@
+.Checkbox-group {
+    --padding: 0.75rem;
+    display: flex;
+    margin-bottom: 1rem;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.Checkbox-group .label {
+    width: 100%;
+    margin: 0;
+    font-size: .75rem;
+    opacity: .8;
+}
+
+.Checkbox-group>*:not(.label) {
+    margin-top: .25rem;
+    margin-bottom: .5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.Checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: .9rem;
+}
+
+.Checkbox span {
+    width: 1.2em;
+    height: 1.2em;
+    border-radius: 40%;
+    border: 2px solid #00000050;
+    margin-right: .25em;
+    padding: 2px;
+    color: #fff;
+    transition: all .3s;
+}
+
+.Checkbox span svg polyline {
+    stroke-dashoffset: 66;
+    transition: stroke-dashoffset 250ms linear 0.2s;
+    fill: none;
+    stroke: currentColor;
+    stroke-dasharray: 22;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+}
+
+.Checkbox input:checked+span {
+    border: 3px solid rgb(0, 112, 240);
+    background-color: rgb(0, 112, 240);
+}
+
+.Checkbox input:checked+span svg polyline {
+    stroke-dashoffset: 44;
+}
+
+.Checkbox input {
+    display: none;
+}

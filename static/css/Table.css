@@ -1,0 +1,56 @@
+.Table {
+    padding: 1rem;
+    overflow: auto;
+}
+
+.Table.fixed table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.Table table {
+    min-width: 100%;
+}
+
+.Table thead tr {
+    border-radius: 0.5rem;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+.Table thead tr th:first-child {
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+
+.Table thead tr th:last-child {
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+.Table thead tr th {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    font-weight: 600;
+    vertical-align: middle;
+    text-align: left;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    white-space: nowrap;
+    height: 2.5rem;
+    background-color: rgb(244, 244, 245);
+    color: rgb(113, 113, 122);
+}
+
+.Table td {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    font-weight: 400;
+    vertical-align: middle;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    white-space: normal;
+    position: relative;
+}

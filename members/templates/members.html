@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}列表 | BMI{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static '/css/init.css' %}" />
+<link rel="stylesheet" href="{% static '/css/Button.css' %}" />
+<link rel="stylesheet" href="{% static '/css/Card.css' %}" />
+<link rel="stylesheet" href="{% static '/css/Table.css' %}" />
+<link rel="stylesheet" href="{% static '/css/Modal.css' %}" />
+<style>
+    main {
+        width: 100%;
+        overflow-x: hidden;
+        min-height: 100vh;
+    }
+
+    .Table {
+        width: 80%;
+        margin: 2rem auto;
+        padding: 1rem 2rem;
+        max-width: 500px;
+    }
+
+    .Table h1 {
+        margin: 0;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="Card Table">
+    <h1>列表</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>名字</th>
+                <th>身高</th>
+                <th>體重</th>
+                <th>BMI</th>
+                <th>評估</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for x in mymembers %}
+            <tr>
+                <td>{{ x.name }}</td>
+                <td>{{ x.height }}</td>
+                <td>{{ x.weight }}</td>
+                <td>{{ x.bmi }}</td>
+                <td>{{ x.analysis }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button onclick="showModal()" class="Button"
+        style="color: rgb(var(--theme-color-danger-text)); background-color: rgb(var(--theme-color-danger));margin-top: 1rem;">刪除全部</button>
+</div>
+<script src="{% static '/js/Modal.js' %}"></script>
+<script>
+    const modal = new Modal();
+    document.body.appendChild(modal.getElement());
+    const span = document.createElement('span');
+    span.innerHTML = '確定要刪除全部資料？';
+    modal.modalContent.appendChild(span);
+    const btnGroup = document.createElement('div');
+    btnGroup.classList.add('Button-group');
+    const cancelBtn = document.createElement('button');
+    cancelBtn.classList.add('Button');
+    cancelBtn.innerHTML = '取消';
+    cancelBtn.onclick = () => modal.hide();
+    const confirmBtn = document.createElement('button');
+    confirmBtn.classList.add('Button');
+    confirmBtn.style.backgroundColor = 'rgb(var(--theme-color-danger))';
+    confirmBtn.style.color = 'rgb(var(--theme-color-danger-text))';
+    confirmBtn.innerHTML = '確定';
+    confirmBtn.onclick = () => {
+        window.location.href = '/members/delete';
+    };
+    btnGroup.appendChild(cancelBtn);
+    btnGroup.appendChild(confirmBtn);
+    modal.modalContent.appendChild(btnGroup);
+
+    function showModal() {
+        modal.show();
+    }
+</script>
+{% endblock %}

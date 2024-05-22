@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}新增 | BMI{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static '/css/init.css' %}" />
+<link rel="stylesheet" href="{% static '/css/Button.css' %}" />
+<link rel="stylesheet" href="{% static '/css/Card.css' %}" />
+<link rel="stylesheet" href="{% static '/css/Input.css' %}" />
+<style>
+    .form {
+        width: 80%;
+        margin: 2rem auto;
+        padding: 1rem 2rem;
+        max-width: 500px;
+    }
+
+    .row:not(.error) {
+        display: flex;
+        gap: 0.75rem;
+        justify-content: space-between;
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+    .form h1 {
+        margin: 0;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .error {
+        color: rgb(var(--theme-color-danger));
+        font-size: 80%;
+        margin-left: .5em;
+    }
+
+    .error * {
+        list-style-type: none;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<form action="" method="post" class="Card form">
+    {% csrf_token %}
+    <h1>新增</h1>
+    {{ form.non_field_errors }}
+    <div class="row">
+        <label class="Input">
+            {{ form.name }}
+            <div class="label">{{ form.name.label_tag }}<span>*</span></div>
+        </label>
+    </div>
+    {% if form.name.errors %}
+    <div class="row error">{{ form.name.errors }}</div>
+    {% endif %}
+    <div class="row">
+        <label class="Input">
+            {{ form.height }}
+            <div class="label">{{ form.height.label_tag }}<span>*</span></div>
+            <span>cm</span>
+        </label>
+    </div>
+    {% if form.height.errors %}
+    <div class="row error">{{ form.height.errors }}</div>
+    {% endif %}
+    <div class="row">
+        <label class="Input">
+            {{ form.weight }}
+            <div class="label">{{ form.weight.label_tag }}<span>*</span></div>
+            <span>kg</span>
+        </label>
+    </div>
+    {% if form.weight.errors %}
+    <div class="row error">{{ form.weight.errors }}</div>
+    {% endif %}
+    <div class="Button-group">
+        <input type="reset" value="清除" class="Button">
+        <input type="submit" value="提交" class="Button"
+            style="color: rgb(var(--theme-color-primary-text)); background-color: rgb(var(--theme-color-primary));">
+    </div>
+</form>
+
+{% endblock %}

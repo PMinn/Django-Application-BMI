@@ -1,0 +1,52 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    {% block style %}{% endblock %}
+    <style>
+        header {
+            width: 100vw;
+            position: fixed;
+            top: 0;
+            box-shadow: var(--theme-box-shadow);
+            z-index: calc(var(--theme-max-z-index) - 1);
+            background-color: #fff;
+        }
+
+        header ul {
+            display: flex;
+            align-items: center;
+            list-style-type: none;
+            padding: 1rem;
+            gap: 1rem;
+        }
+
+        header * {
+            color: #000;
+        }
+
+        body {
+            padding-top: 3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">首頁</a></li>
+                <li><a href="/members">列表</a></li>
+                <li><a href="/create_random_members">隨機新增</a></li>
+                <li><a href="/new_member">新增</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+
+</html>

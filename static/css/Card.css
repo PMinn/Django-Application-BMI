@@ -1,0 +1,29 @@
+.card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    height: auto;
+    color: #11181c;
+    background-color: #fff;
+    border: 1px #f8f8f2 solid;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    box-shadow: var(--theme-box-shadow);
+    border-radius: 14px;
+    transition-property: transform, background;
+    transition-timing-function: ease;
+    transition-duration: .25s;
+    padding: 0.75rem;
+    flex: 1;
+    justify-content: inherit;
+    align-items: inherit;
+    word-wrap: break-word;
+    text-align: left;
+    overflow-y: auto;
+    -webkit-font-smoothing: subpixel-antialiased;
+    box-sizing: border-box;
+}
+
+@media (min-width: 768px) {}

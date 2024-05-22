@@ -1,0 +1,40 @@
+.Chips {
+    display: flex;
+    gap: 1rem;
+}
+
+.Chip {
+    --background-color: #fff;
+    --color: #000;
+    --border-color: rgb(212, 212, 216);
+    position: relative;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    min-width: -moz-min-content;
+    min-width: min-content;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    white-space: nowrap;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    height: 1.75rem;
+    font-size: 0.875rem;
+    border-radius: 9999px;
+    border: 2px var(--border-color) solid;
+    background-color: var(--background-color);
+    color: var(--color);
+}
+
+.Chip>svg {
+    max-height: 80%;
+}
+
+.Chip>span {
+    flex: 1;
+    font-weight: 400;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    color: inherit;
+}

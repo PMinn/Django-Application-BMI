@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+
+:root {
+    --theme-area-left: 1em;
+    --theme-area-bottom: 10vh;
+    --theme-content-width: 400px;
+    --theme-content-height: 50vh;
+
+    --theme-color-default: 212, 212, 216;
+    --theme-color-default-text: 17, 24, 28;
+    --theme-color-primary: 0, 112, 240;
+    --theme-color-primary-text: 255, 255, 255;
+    --theme-color-secondary: 120, 40, 200;
+    --theme-color-secondary-text: 255, 255, 255;
+    --theme-color-success: 127, 204, 40;
+    --theme-color-success-text: 0, 0, 0;
+    --theme-color-warning: 245, 165, 36;
+    --theme-color-warning-text: 0, 0, 0;
+    --theme-color-danger: 255, 56, 53;
+    --theme-color-danger-text: 255, 255, 255;
+
+    --theme-box-shadow: 0 0 #0000, 0 0 #0000, 0px 0px 15px 0px rgba(0, 0, 0, .03), 0px 2px 30px 0px rgba(0, 0, 0, .08), 0px 0px 1px 0px rgba(0, 0, 0, .3);
+    --theme-backdrop-filter: blur(12px) saturate(1.5);
+
+    --theme-max-z-index: 2147483647;
+}
+
+:host *::-webkit-scrollbar,
+body *::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 99px !important;
+}
+
+:host *::-webkit-scrollbar-button,
+body *::-webkit-scrollbar-button,
+body::-webkit-scrollbar-button {
+    background: transparent !important;
+    border-radius: 99px !important;
+}
+
+:host *::-webkit-scrollbar-track-piece,
+body *::-webkit-scrollbar-track-piece,
+body::-webkit-scrollbar-track-piece {
+    background: transparent !important;
+}
+
+:host *::-webkit-scrollbar-thumb,
+body *::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+    border-radius: 99px !important;
+    background-color: rgba(0, 0, 0, 0.4) !important;
+}
+
+:host *::-webkit-scrollbar-track,
+body *::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+    box-shadow: transparent !important;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #ffffff;
+    line-height: 1.7142857;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+main {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    position: relative;
+}
+
+section {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5rem;
+}
+
+section>*:is(h1, h2, h3, h4, h5, h6) {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: .5rem;
+    margin-top: 1rem;
+}
+
+table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+}
