@@ -19,6 +19,9 @@
     // 建立專案
     django-admin startproject my_tennis_club
 
+    // 建立一個 app (子系統)
+    py manage.py startapp members
+
     // 啟動伺服器
     py manage.py runserver
 
